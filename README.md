@@ -22,6 +22,11 @@ Integração IA: Anthropic Claude API (chave colada pelo próprio usuário na si
   - Check-in Automático
 - **Social Mídia**
   - Criação de Pauta
+- **Extensão Chrome V4 Browser Agent** (baixe pelo próprio painel)
+  - Coletar tasks do mkt.lab → clipboard
+  - Criar tasks em lote no mkt.lab (duplica [V4] CLAUDE, renomeia, seleciona workspace, preenche briefing, Avançar, Criar)
+  - Colar mensagens de rapport no WhatsApp Web em lote
+  - **Aprovação no Google Chat** — com a task aberta no mkt.lab, detecta o cliente pelo padrão de título V4 `[NN][Tipo] (CLIENTE) | ...` e envia link + mensagem configurável no grupo do cliente com um clique (webhook por cliente; template global em Clientes)
 
 ## Como rodar localmente
 
@@ -35,8 +40,11 @@ Abre o `index.html` no navegador. Só isso. Nenhum build, nenhum servidor.
 
 ## Deploy
 
-Deploy estático na Vercel via drag & drop de toda esta pasta em https://vercel.com/new
+Deploy estático na Vercel — este repositório é conectado direto à Vercel. Cada push na `main` vira deploy automático.
 
-## Documentação completa
+Para deploy manual avulso: drag & drop desta pasta em https://vercel.com/new.
 
-Ver [`docs/playbook.md`](docs/playbook.md).
+## Documentação
+
+- [`docs/playbook.md`](docs/playbook.md) — playbook do hackathon
+- [`docs/checkpoint-2026-04-21.md`](docs/checkpoint-2026-04-21.md) — estado do projeto no checkpoint
