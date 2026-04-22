@@ -1,0 +1,49 @@
+{
+  "manifest_version": 3,
+  "name": "V4 Browser Agent",
+  "version": "1.0.0",
+  "description": "Executor universal para tarefas do PilotoAuto — V4 Company",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": [
+    "https://mkt.lab/*",
+    "https://*.ekyte.com/*",
+    "https://web.whatsapp.com/*",
+    "https://chat.googleapis.com/*",
+    "file:///*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "assets/icon-48.png",
+      "128": "assets/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mkt.lab/*", "https://*.ekyte.com/*"],
+      "js": ["content-scripts/ekyte.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content-scripts/whatsapp.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://account-ai-dusky.vercel.app/*",
+        "http://localhost/*",
+        "file:///*"
+      ],
+      "js": ["content-scripts/bridge.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
+  }
+}
